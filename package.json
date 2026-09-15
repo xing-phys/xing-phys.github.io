@@ -1,1 +1,1 @@
-{"name":"personal-homepage","private":true,"version":"0.1.0","scripts":{"dev":"node server.mjs","check":"node --check dist/app.js"},"type":"module"}
+{"name":"personal-homepage","private":true,"version":"0.1.0","scripts":{"dev":"node server.mjs","build:cv":"typst compile cv/cv.typ dist/cv.pdf --pdf-standard 1.7","check":"node --check dist/app.js"},"type":"module"}
