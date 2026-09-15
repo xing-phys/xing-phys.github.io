@@ -1,9 +1,19 @@
-# Personal website draft
+# Ze-Yu Xing — Personal Website
 
-A static research portfolio with a visual homepage and optional terminal, inspired by the approachable GUI/terminal pairing of Sat Naing's portfolios. Personal details and profile links are provided by Ze-Yu Xing. Publications and preprints were checked against Google Scholar, publisher records, and arXiv on 2026-09-14. The introduction and research interests have been completed; notes and projects remain placeholders. No public email or CV has been supplied.
+A personal research website featuring my background, research interests, selected publications, notes, and profile links. It includes both a visual homepage and an optional interactive terminal view.
+
+Visit the website at [xing-phys.github.io](https://xing-phys.github.io/).
+
+Publication and preprint details were checked against Google Scholar, publisher records, and arXiv on 2026-09-14. Supporting references are recorded in `PUBLICATION_SOURCES.md`.
+
+## Local development
 
 Run `npm run dev` and open http://127.0.0.1:4173. No dependency installation is needed. Run `npm run check` to check JavaScript syntax.
 
+## Project structure
+
 The site is in `dist/`. Edit `dist/index.html` for homepage content, `dist/app.js` for terminal content and interactions, and `dist/style.css` for appearance. Fonts use Google Fonts with local fallback stacks.
 
-The site is deployed from `dist/` to GitHub Pages by `.github/workflows/pages.yml`. Pushing to `main` publishes the latest version at `https://xing-phys.github.io/`.
+## Deployment
+
+The site is deployed from `dist/` by the GitHub Actions workflow in `.github/workflows/pages.yml`. Every push to `main` automatically publishes the latest version to GitHub Pages.
