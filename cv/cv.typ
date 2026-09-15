@@ -61,6 +61,19 @@ PhD researcher working primarily on open quantum systems and non-equilibrium qua
   [• Statistical mechanics], [• Quantum information and simulation],
 )
 
+= Ongoing Research Projects
+
+#link("https://github.com/xing-phys/OYA-OQS")[#strong[OYA-OQS: Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems] #text(size: 7.5pt)[↗]]
+#v(2pt)
+Investigating spectral constraints in translationally invariant open quantum many-body systems with strong U(1) symmetry. The project combines analytical Weyl-sequence arguments with momentum-resolved exact diagonalization and tensor-network simulations of dissipative spin chains.
+
+#v(7pt)
+#link("https://github.com/xing-phys/ssb-qme")[#strong[ssb-qme: Symmetry-Enforced Strong Quantum Mpemba Effect] #text(size: 7.5pt)[↗]]
+#v(2pt)
+Developing a symmetry-based mechanism for strong quantum Mpemba effects in symmetry-broken open systems. Current work studies discrete parity and continuous U(1) symmetries through Liouvillian analysis and quantum-master-equation simulations.
+
+#pagebreak()
+
 = Publications and Preprints
 
 #publication([2026], [Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability], [*Ze-Yu Xing*, Yuncheng Xiong, and Haiping Hu], [Communications Physics 9, 127 (2026)], "https://doi.org/10.1038/s42005-026-02546-2", note: [Ze-Yu Xing and Yuncheng Xiong contributed equally.])
