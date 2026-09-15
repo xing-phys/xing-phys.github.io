@@ -1,6 +1,6 @@
 # Personal website draft
 
-A static research portfolio with a visual homepage and optional terminal, inspired by the approachable GUI/terminal pairing of Sat Naing's portfolios. All names, affiliations, publications, and contact details are placeholders.
+A static research portfolio with a visual homepage and optional terminal, inspired by the approachable GUI/terminal pairing of Sat Naing's portfolios. Personal details and profile links are provided by Ze-Yu Xing. Publications and preprints were checked against Google Scholar, publisher records, and arXiv on 2026-09-14. The introduction and research interests have been completed; notes and projects remain placeholders. No public email or CV has been supplied.
 
 Run `npm run dev` and open http://127.0.0.1:4173. No dependency installation is needed. Run `npm run check` to check JavaScript syntax.
 
