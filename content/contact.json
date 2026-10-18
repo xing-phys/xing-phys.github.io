@@ -1,0 +1,22 @@
+{
+  "eyebrow": "05 / LET'S CONNECT",
+  "title": ["Good questions start", "great conversations"],
+  "description": "For research, collaboration, or a shared curiosity.",
+  "links": [
+    {
+      "id": "scholar",
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=qwSu3ekAAAAJ&hl=en"
+    },
+    {
+      "id": "orcid",
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0009-5655-0187"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/xing-phys"
+    }
+  ]
+}

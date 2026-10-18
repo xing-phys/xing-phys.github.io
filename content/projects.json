@@ -1,0 +1,28 @@
+{
+  "eyebrow": "02 / WORK IN PROGRESS",
+  "title": "Ongoing research projects",
+  "description": [
+    "Current questions under active",
+    "analytical and numerical investigation."
+  ],
+  "items": [
+    {
+      "name": "OYA-OQS",
+      "title": "Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems",
+      "url": "https://github.com/xing-phys/OYA-OQS",
+      "symbol": "U(1)",
+      "status": "ONGOING",
+      "description": "Investigating spectral constraints in translationally invariant open quantum many-body systems with strong U(1) symmetry. The project combines analytical Weyl-sequence arguments with momentum-resolved exact diagonalization and tensor-network simulations of dissipative spin chains.",
+      "tags": ["OPEN QUANTUM SYSTEMS", "TENSOR NETWORKS", "EXACT DIAGONALIZATION"]
+    },
+    {
+      "name": "ssb-qme",
+      "title": "Symmetry-Enforced Strong Quantum Mpemba Effect",
+      "url": "https://github.com/xing-phys/ssb-qme",
+      "symbol": "ℒ",
+      "status": "ONGOING",
+      "description": "Developing a symmetry-based mechanism for strong quantum Mpemba effects in symmetry-broken open systems. Current work studies discrete parity and continuous U(1) symmetries through Liouvillian analysis and quantum-master-equation simulations.",
+      "tags": ["QUANTUM MPEMBA EFFECT", "SYMMETRY BREAKING", "LINDBLAD DYNAMICS"]
+    }
+  ]
+}

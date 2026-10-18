@@ -1,0 +1,215 @@
+/* Screen-size adjustments, reduced motion, and final shared details. */
+
+@media(min-width:1500px) {
+  .hero {
+    min-height: 730px;
+  }
+}
+
+@media(max-width:900px) {
+  .wrap {
+    width: calc(100% - 48px);
+  }
+  h1 {
+    font-size: 58px;
+  }
+  .hello {
+    font-size: 35px;
+    margin-left: 8px;
+  }
+  .hero {
+    gap: 0;
+  }
+  .intro {
+    font-size: 20px;
+  }
+  .hero-art {
+    aspect-ratio: 1/1.5;
+  }
+  .research-grid {
+    gap: 12px;
+  }
+  .research-card {
+    padding: 22px 18px;
+  }
+  .research-card h3 {
+    font-size: 17px;
+  }
+  .tags span {
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 29px;
+  }
+}
+
+@media(max-width:640px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  .header {
+    height: 86px;
+  }
+  nav {
+    display: none;
+  }
+  .header-actions {
+    gap: 15px;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+    min-height: 0;
+    align-items: stretch;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+  .hero-art {
+    width: 100%;
+    max-width: 380px;
+    height: 350px;
+    align-self: center;
+    margin-top: 25px;
+  }
+  .orbit-label {
+    top: 16px;
+  }
+  .art-caption {
+    bottom: 10px;
+  }
+  .hero {
+    padding-bottom: 35px;
+  }
+  .hero-actions {
+    gap: 24px;
+  }
+  .button {
+    padding: 12px 15px;
+  }
+  .button span {
+    margin-left: 8px;
+  }
+  .divider>a {
+    display: none;
+  }
+  .section {
+    padding-top: 65px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .section-heading>p {
+    margin-top: 15px;
+  }
+  .draft-tag {
+    display: block;
+    margin-top: 15px;
+  }
+  .research-grid,.project-grid,.notes-grid {
+    grid-template-columns: 1fr;
+  }
+  .research-card {
+    padding: 26px;
+  }
+  .card-symbol {
+    margin-bottom: 15px;
+  }
+  .research-card h3 {
+    font-size: 20px;
+  }
+  .publication {
+    gap: 17px;
+  }
+  .publication h3 {
+    font-size: 17px;
+  }
+  .paper-label {
+    display: none;
+  }
+  .contact {
+    padding: 75px 0;
+  }
+  .contact h2 {
+    font-size: 34px;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
+  footer>span:nth-child(2) {
+    display: none;
+  }
+  .terminal-top {
+    padding: 0 20px;
+  }
+  .terminal-top>span {
+    display: none;
+  }
+  .terminal-body {
+    padding: 35px 20px 90px;
+  }
+  .terminal-welcome h1 {
+    letter-spacing: -2px;
+  }
+  .terminal-bottom {
+    padding: 12px 20px;
+  }
+  .terminal-bottom>span {
+    max-width: 180px;
+    font-size: 9px;
+  }
+  #terminal-form {
+    gap: 7px;
+  }
+  #terminal-form label {
+    font-size: 11px;
+  }
+  .terminal-hint {
+    font-size: 9px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none!important;
+  }
+}
+
+/* Profile details and publication titles can wrap on narrow screens. */
+.hero h1 {
+  font-size: clamp(2.8rem,5.1vw,4.6rem);
+}
+
+.hero h1 .hello {
+  display: none;
+}
+
+.publication>div {
+  min-width: 0;
+}
+
+.publication h3 a:hover {
+  color: var(--accent);
+}
+
+.publication .author-note {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  color: var(--accent);
+}
+
+.profile-links a:hover {
+  text-decoration: underline;
+}

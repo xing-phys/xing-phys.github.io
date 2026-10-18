@@ -1,0 +1,30 @@
+{
+  "eyebrow": "03 / SELECTED WORK",
+  "title": "Publications & preprints",
+  "profileLinkLabel": "Google Scholar ↗",
+  "profileLinkId": "scholar",
+  "items": [
+    {
+      "year": "2026",
+      "title": "Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability",
+      "authors": "Ze-Yu Xing, Yuncheng Xiong, and Haiping Hu",
+      "venue": "Communications Physics 9, 127 (2026)",
+      "url": "https://doi.org/10.1038/s42005-026-02546-2",
+      "authorNote": "Ze-Yu Xing and Yuncheng Xiong contributed equally."
+    },
+    {
+      "year": "2025",
+      "title": "Universal spreading dynamics in quasiperiodic non-Hermitian systems",
+      "authors": "Ze-Yu Xing, Shu Chen, and Haiping Hu",
+      "venue": "Physical Review B 111, L180203 (2025)",
+      "url": "https://doi.org/10.1103/PhysRevB.111.L180203"
+    },
+    {
+      "year": "2024",
+      "title": "Non-Hermitian skin effect in arbitrary dimensions: non-Bloch band theory and classification",
+      "authors": "Yuncheng Xiong, Ze-Yu Xing, and Haiping Hu",
+      "venue": "Preprint · arXiv:2407.01296 (2024)",
+      "url": "https://arxiv.org/abs/2407.01296"
+    }
+  ]
+}

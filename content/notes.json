@@ -1,0 +1,22 @@
+{
+  "eyebrow": "04 / THE OPEN NOTEBOOK",
+  "title": "Notes & side quests",
+  "description": [
+    "Ideas in progress.",
+    "Room for a little exploration."
+  ],
+  "items": [
+    {
+      "category": "PHYSICS NOTES",
+      "title": "A space for working through an idea",
+      "description": "Derivations, intuition, and questions that deserve a second look.",
+      "status": "Your first note goes here"
+    },
+    {
+      "category": "CODE & EXPERIMENTS",
+      "title": "A home for small numerical adventures",
+      "description": "Simulations, useful tools, and the occasional unexpected result.",
+      "status": "Your first project goes here"
+    }
+  ]
+}

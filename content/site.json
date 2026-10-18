@@ -1,0 +1,26 @@
+{
+  "titleSuffix": "Physics & Curiosity",
+  "description": "Ze-Yu Xing — PhD candidate at the Institute of Physics, Chinese Academy of Sciences, Beijing, China.",
+  "brand": "zx",
+  "cvUrl": "cv.pdf",
+  "navigation": [
+    {"label": "About", "href": "#about"},
+    {"label": "Research", "href": "#research"},
+    {"label": "Projects", "href": "#projects"},
+    {"label": "Notes", "href": "#writing"},
+    {"label": "CV ↗", "href": "cv.pdf", "newTab": true}
+  ],
+  "footerText": "Made with curiosity & a little coffee.",
+  "terminalLinkLabel": "Terminal",
+  "footerTerminalLinkLabel": "Prefer the command line? >_",
+  "terminal": {
+    "host": "xing-phys",
+    "visitor": "visitor",
+    "kicker": "ANOTHER WAY TO SAY HELLO",
+    "welcome": [
+      "Welcome to my interactive corner of the internet.",
+      "Type help to explore, or choose a command below."
+    ],
+    "footerText": "QUANTUM CURIOSITY / PERSONAL PORTFOLIO"
+  }
+}

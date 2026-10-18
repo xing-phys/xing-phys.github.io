@@ -1,1 +1,16 @@
-{"name":"personal-homepage","private":true,"version":"0.1.0","scripts":{"dev":"node server.mjs","build:cv":"typst compile cv/cv.typ dist/cv.pdf --pdf-standard 1.7","check":"node --check dist/app.js"},"type":"module"}
+{
+  "name": "personal-homepage",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "build:cv": "typst compile cv/cv.typ dist/cv.pdf --pdf-standard 1.7",
+    "check": "npm run build && node scripts/check.mjs && npm test",
+    "test": "node --test"
+  }
+}

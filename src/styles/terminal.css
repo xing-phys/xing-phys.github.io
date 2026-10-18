@@ -1,0 +1,169 @@
+/* Terminal layout, command output, and terminal themes. */
+
+#terminal {
+  --term-bg: #1d1b2b;
+  --term-text: #ddd8ef;
+  --term-accent: #b3a0ef;
+  min-height: 100vh;
+  background: var(--term-bg);
+  color: var(--term-text);
+  font: 14px/1.9 var(--mono);
+}
+
+#terminal[data-theme="espresso"] {
+  --term-bg: #29231f;
+  --term-text: #e8d8c4;
+  --term-accent: #e7b782;
+}
+
+#terminal[data-theme="light"] {
+  --term-bg: #f4f1fa;
+  --term-text: #423653;
+  --term-accent: #7551bc;
+}
+
+.terminal-top {
+  height: 85px;
+  border-bottom: 1px solid #88888825;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  font-size: 12px;
+}
+
+.terminal-top .brand {
+  font-family: var(--mono);
+  font-size: 27px;
+}
+
+.back-gui {
+  border: 1px solid #88888840;
+  border-radius: 5px;
+  padding: 5px 12px;
+}
+
+.terminal-body {
+  max-width: 1000px;
+  margin: auto;
+  padding: 55px 48px 100px;
+}
+
+.terminal-kicker {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--term-accent);
+}
+
+.terminal-welcome h1 {
+  font: 700 clamp(35px,6vw,65px)/1.4 var(--mono);
+  letter-spacing: -3px;
+  margin-bottom: 8px;
+}
+
+.terminal-welcome h1 span {
+  color: var(--term-accent);
+}
+
+.terminal-welcome p {
+  margin-bottom: 20px;
+}
+
+.terminal-welcome strong {
+  color: var(--term-accent);
+}
+
+.command-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 27px 0 40px;
+}
+
+.command-chips button {
+  background: #88888810;
+  color: var(--term-accent);
+  border: 1px solid #88888840;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.command-chips button:hover {
+  background: #88888825;
+}
+
+#terminal-form {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+#terminal-form label {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+#terminal-form label span {
+  color: var(--term-accent);
+}
+
+#command {
+  min-width: 0;
+  flex: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--term-text);
+  outline: none;
+  caret-color: var(--term-accent);
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.terminal-hint {
+  font-size: 10px;
+  opacity: .6;
+  margin-top: 35px;
+}
+
+.terminal-hint button,.terminal-bottom button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+}
+
+.terminal-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: var(--term-bg);
+  border-top: 1px solid #88888825;
+  padding: 12px 48px;
+  font-size: 10px;
+}
+
+.output-entry {
+  margin: 22px 0;
+}
+
+.output-prompt {
+  color: var(--term-accent);
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.output-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.9;
+}
+
+body.in-terminal {
+  background: #1d1b2b;
+}

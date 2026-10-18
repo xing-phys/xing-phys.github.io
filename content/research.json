@@ -1,0 +1,28 @@
+{
+  "eyebrow": "01 / WHAT KEEPS ME CURIOUS",
+  "title": "Research interests",
+  "description": [
+    "Exploring how complex quantum systems evolve,",
+    "interact with their environments, and encode information."
+  ],
+  "items": [
+    {
+      "symbol": "ψ(t)",
+      "title": "Non-equilibrium dynamics",
+      "description": "Understanding the dynamics of quantum many-body systems far from equilibrium, including their relaxation, transport, and emergent behavior.",
+      "tags": ["MANY-BODY DYNAMICS", "STATISTICAL MECHANICS"]
+    },
+    {
+      "symbol": "ℒρ",
+      "title": "Open quantum systems",
+      "description": "Studying quantum systems coupled to their environments, with particular interest in dissipation, decoherence, and non-Hermitian phenomena.",
+      "tags": ["DISSIPATIVE DYNAMICS", "NON-HERMITIAN PHYSICS"]
+    },
+    {
+      "symbol": "Q↔A",
+      "title": "Interdisciplinary connections",
+      "description": "Exploring connections between quantum dynamics, quantum information, quantum simulation, and machine learning.",
+      "tags": ["QUANTUM INFORMATION", "MACHINE LEARNING"]
+    }
+  ]
+}
