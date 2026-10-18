@@ -73,7 +73,9 @@ For layout changes, edit the corresponding template in `src/templates/`. To reor
 
 Treat `dist/index.html`, `dist/app.js`, `dist/scripts/`, and `dist/style.css` as generated output: the next build overwrites them. The existing generated files remain committed for compatibility; the source of truth is `content/` and `src/`. The separately compiled `dist/cv.pdf` is preserved by homepage builds.
 
-Fonts use Google Fonts with local fallback stacks. All homepage content is rendered into static HTML, so it remains readable without browser JavaScript.
+The Scholarly typography uses Source Serif 4 for headings, Source Sans 3 for body text, and Space Mono for the terminal and technical labels. Fonts load from Google Fonts with local fallback stacks. In `src/styles/base.css`, edit `--font-heading` or `--font-body` to change the font families; `--heading-weight` controls the serif headings (`500` is medium, `600` is semibold). Heading spacing is in `src/styles/homepage.css`.
+
+All homepage content is rendered into static HTML, so it remains readable without browser JavaScript.
 
 ## Deployment
 
