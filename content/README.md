@@ -50,7 +50,7 @@ When a preprint has been published, keep one entry using the journal citation an
 }
 ```
 
-This adds an arXiv link under the same paper in both the homepage and terminal. The CV is maintained separately in `cv/cv.typ`; update its matching entry and run `npm run build:cv` too.
+This adds an arXiv link under the same paper in the homepage, terminal, and CV. The CV reads this publication list directly; run `npm run build:cv` to refresh its PDF after editing.
 
 ## Add a project or research interest
 

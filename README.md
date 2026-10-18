@@ -21,6 +21,8 @@ Start in **[`content/`](content/README.md)**. Each section has a separate JSON f
 
 The [content editing guide](content/README.md) explains the fields, adding entries, and JSON syntax with examples.
 
+The CV uses the selected `basic-resume` Typst template. Its publications, name, institution, location, and profile links read the shared content files; after editing them, run `npm run build:cv` to refresh the PDF. Other CV sections and typography settings are in `cv/cv.typ`; see [`cv/README.md`](cv/README.md).
+
 ## Local development
 
 Use Node.js 22 or later. There are no npm dependencies to install.

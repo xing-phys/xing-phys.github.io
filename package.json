@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "build": "node scripts/build.mjs",
-    "build:cv": "typst compile cv/cv.typ dist/cv.pdf --pdf-standard 1.7",
+    "build:cv": "typst compile --root . cv/cv.typ dist/cv.pdf --pdf-standard 1.7",
     "check": "npm run build && node scripts/check.mjs && npm test",
     "test": "node --test"
   }

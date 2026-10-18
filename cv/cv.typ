@@ -1,91 +1,123 @@
-#let accent = rgb("#7755cf")
-#let ink = rgb("#242333")
-#let muted = rgb("#666371")
-#let rule = rgb("#ded9e9")
-#set document(title: "Curriculum Vitae - Ze-Yu Xing", author: "Ze-Yu Xing")
-#set page(paper: "a4", margin: (x: 17mm, top: 13mm, bottom: 13mm), footer: context [
-  #set text(size: 7.5pt, fill: muted)
-  #grid(columns: (1fr, auto), [Ze-Yu Xing - Curriculum Vitae], [#counter(page).display("1")])
-])
-#set text(font: ("DejaVu Sans", "Arial"), size: 9pt, fill: ink)
-#set par(justify: false, leading: 0.52em)
-#show link: set text(fill: accent)
-#show heading.where(level: 1): it => {
-  v(4pt)
-  text(size: 10.5pt, weight: "bold", tracking: 0.08em, fill: accent, upper(it.body))
-  v(2pt)
-  line(length: 100%, stroke: 0.6pt + rule)
-  v(3pt)
-}
-#let dated-entry(date, title, subtitle: none, body: none) = grid(
-  columns: (25mm, 1fr), column-gutter: 4mm, align: (left, top),
-  text(size: 8pt, fill: muted, date),
-  [#strong(title)#if subtitle != none [\ #text(fill: muted, subtitle)]#if body != none [#v(1.5pt)#body]],
-)
-#let publication(year, title, authors, venue, url, note: none, preprint: none) = {
-  dated-entry(year, link(url)[#title #text(size: 7.5pt)[↗]], subtitle: authors, body: [
-    #emph(venue)#if preprint != none [ · #link(preprint.url)[#preprint.label]]#if note != none [\ #text(size: 8pt, fill: muted, note)]
-  ])
-  v(4pt)
-}
-#grid(
-  columns: (1fr, auto), column-gutter: 8mm, align: (left, top),
-  [#text(size: 23pt, weight: "bold", tracking: -0.035em)[Ze-Yu Xing]
-   #v(2pt)
-   #text(size: 11pt, weight: "medium", fill: accent)[PhD Candidate in Physics]],
-  [#set text(size: 8.3pt)
-   #align(right)[Institute of Physics, Chinese Academy of Sciences\
-   Beijing, China\
-   #link("https://xing-phys.github.io/")[Website] · #link("https://github.com/xing-phys")[GitHub]\
-   #link("https://scholar.google.com/citations?user=qwSu3ekAAAAJ&hl=en")[Google Scholar] · #link("https://orcid.org/0009-0009-5655-0187")[ORCID]]],
-)
-#v(3pt)
-#line(length: 100%, stroke: 1.1pt + accent)
+// Selected template: basic-resume 0.2.9 by Stephen Xu.
+// https://typst.app/universe/package/basic-resume/
+#import "vendor/basic-resume-0.2.9/lib.typ": resume, edu
 
-= Research Profile
+// Publications and profile links share the homepage's editable content files.
+#let about = json("../content/about.json")
+#let contacts = json("../content/contact.json").links
+#let publications = json("../content/publications.json").items
+
+// Typography and paper settings. The upstream layout supplies the section rules,
+// small-cap headings, entry helpers, and half-inch page margins.
+#show: resume.with(
+  author: about.name,
+  font: "New Computer Modern",
+  font-size: 11pt,
+  author-font-size: 24pt,
+  paper: "a4",
+  accent-color: "#242333",
+)
+
+#set document(title: "Curriculum Vitae - " + about.name, author: about.name)
+#set par(justify: false, leading: 0.45em, spacing: 0.45em)
+
+// Keep each citation together and emphasize the author's name in the author list.
+#let publication(paper) = block(breakable: false)[
+  #grid(
+    columns: (1fr, auto), column-gutter: 10pt,
+    strong(link(paper.url, paper.title)),
+    paper.year,
+  )
+  #v(2pt)
+  #{
+    let names = paper.authors.split(about.name)
+    for (index, part) in names.enumerate() {
+      if index > 0 { strong(about.name) }
+      part
+    }
+  } \
+  #emph(paper.venue)
+  #if "preprint" in paper [ · #link(paper.preprint.url, paper.preprint.label)]
+  #if "authorNote" in paper [\ #text(size: 9pt, paper.authorNote)]
+]
+
+#let award(title, institution, year) = block(breakable: false)[
+  #grid(
+    columns: (1fr, auto), column-gutter: 10pt,
+    [#strong(title), #institution], year,
+  )
+]
+
+#text(size: 11pt)[PhD Candidate in Physics · #about.institution] \
+#about.location · #link("https://xing-phys.github.io/")[Website]#for contact in contacts [ · #link(contact.url, contact.label)]
+
+== Research Profile
 
 PhD researcher working primarily on open quantum systems and non-equilibrium quantum dynamics. Research interests include quantum many-body dynamics, relaxation and transport, dissipation and decoherence, non-Hermitian physics, statistical mechanics, quantum information, quantum simulation, and connections with machine learning.
 
-= Education and Affiliation
+== Education and Affiliation
 
-#dated-entry([Aug. 2022 - Present], [PhD Candidate in Physics], subtitle: [Institute of Physics, Chinese Academy of Sciences · Beijing, China])
-#v(5pt)
-#dated-entry([Aug. 2018 - Jun. 2022], [B.Sc. in Physics, Honors Program in Science], subtitle: [Jilin University · Jilin, China], body: [GPA: 3.88/4.00 (93.2/100).])
+#block(breakable: false)[
+  #edu(
+    institution: about.institution,
+    location: about.location,
+    degree: "PhD Candidate in Physics",
+    dates: "Aug. 2022 - Present",
+    consistent: true,
+  )
+]
 
-= Research Interests
+#block(breakable: false)[
+  #edu(
+    institution: "Jilin University",
+    location: "Jilin, China",
+    degree: "B.Sc. in Physics, Honors Program in Science",
+    dates: "Aug. 2018 - Jun. 2022",
+    consistent: true,
+  ) \
+  GPA: 3.88/4.00 (93.2/100).
+]
 
-#grid(
-  columns: (1fr, 1fr), column-gutter: 8mm, row-gutter: 2.5pt,
-  [• Non-equilibrium quantum dynamics], [• Open quantum systems],
-  [• Quantum many-body physics], [• Non-Hermitian physics],
-  [• Statistical mechanics], [• Quantum information and simulation],
-)
+== Research Interests
 
-= Ongoing Research Projects
+Non-equilibrium quantum dynamics · Open quantum systems · Quantum many-body physics · Non-Hermitian physics · Statistical mechanics · Quantum information and simulation
 
-#link("https://github.com/xing-phys/OYA-OQS")[#strong[OYA-OQS: Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems] #text(size: 7.5pt)[↗]]
-#v(2pt)
+== Ongoing Research Projects
+
+#strong(link("https://github.com/xing-phys/OYA-OQS")[OYA-OQS: Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems])
+
 Investigating spectral constraints in translationally invariant open quantum many-body systems with strong U(1) symmetry. The project combines analytical Weyl-sequence arguments with momentum-resolved exact diagonalization and tensor-network simulations of dissipative spin chains.
 
-#v(7pt)
-#link("https://github.com/xing-phys/ssb-qme")[#strong[ssb-qme: Symmetry-Enforced Strong Quantum Mpemba Effect] #text(size: 7.5pt)[↗]]
-#v(2pt)
+#strong(link("https://github.com/xing-phys/ssb-qme")[ssb-qme: Symmetry-Enforced Strong Quantum Mpemba Effect])
+
 Developing a symmetry-based mechanism for strong quantum Mpemba effects in symmetry-broken open systems. Current work studies discrete parity and continuous U(1) symmetries through Liouvillian analysis and quantum-master-equation simulations.
 
-#pagebreak()
+== Publications and Preprints
 
-= Publications and Preprints
+#for paper in publications {
+  publication(paper)
+  v(5pt)
+}
 
-#publication([2026], [Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability], [*Ze-Yu Xing*, Yuncheng Xiong, and Haiping Hu], [Communications Physics 9, 127 (2026)], "https://doi.org/10.1038/s42005-026-02546-2", preprint: (label: [arXiv:2407.01296 (2024)], url: "https://arxiv.org/abs/2407.01296"), note: [Ze-Yu Xing and Yuncheng Xiong contributed equally.])
+== Honors and Awards
 
-#publication([2025], [Universal spreading dynamics in quasiperiodic non-Hermitian systems], [*Ze-Yu Xing*, Shu Chen, and Haiping Hu], [Physical Review B 111, L180203 (2025)], "https://doi.org/10.1103/PhysRevB.111.L180203")
-
-= Honors and Awards
-
-#dated-entry([2020], [Ny Tsi-Ze Scholarship], subtitle: [Institute of Physics, Chinese Academy of Sciences])
-#v(2pt)
-#dated-entry([2020], [Honorable Mention, Mathematical Contest in Modeling], subtitle: [Consortium for Mathematics and Its Applications])
-#v(2pt)
-#dated-entry([2019], [National Scholarship], subtitle: [Ministry of Education, People's Republic of China])
-#v(2pt)
-#dated-entry([2019], [Outstanding Student of Jilin University], subtitle: [Jilin University])
+#award(
+  [Ny Tsi-Ze Scholarship],
+  [Institute of Physics, Chinese Academy of Sciences],
+  [2020],
+)
+#award(
+  [Honorable Mention, Mathematical Contest in Modeling],
+  [Consortium for Mathematics and Its Applications],
+  [2020],
+)
+#award(
+  [National Scholarship],
+  [Ministry of Education, People's Republic of China],
+  [2019],
+)
+#award(
+  [Outstanding Student of Jilin University],
+  [Jilin University],
+  [2019],
+)
