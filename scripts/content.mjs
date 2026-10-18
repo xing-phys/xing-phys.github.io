@@ -27,7 +27,10 @@ const schemas = {
   },
   publications: {
     eyebrow: 'string', title: 'string', profileLinkLabel: 'string', profileLinkId: 'string',
-    items: [{year: 'string', title: 'string', authors: 'string', venue: 'string', url: 'string', 'authorNote?': 'string'}],
+    items: [{
+      year: 'string', title: 'string', authors: 'string', venue: 'string', url: 'string',
+      'authorNote?': 'string', 'preprint?': {label: 'string', url: 'string'},
+    }],
   },
   notes: {
     ...heading,

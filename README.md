@@ -81,4 +81,4 @@ All homepage content is rendered into static HTML, so it remains readable withou
 
 Every push to `main` runs the build and checks, then publishes `dist/` to GitHub Pages using [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Source edits are built automatically during deployment. Run `npm run check` locally before pushing; include the regenerated files when committing.
 
-Publication and preprint details were checked on 2026-09-14. Supporting references are recorded in [`PUBLICATION_SOURCES.md`](PUBLICATION_SOURCES.md).
+The 2024 NHSE preprint was merged into its 2026 journal publication on 2026-10-18, following the author's confirmation. Supporting references and verification details are recorded in [`PUBLICATION_SOURCES.md`](PUBLICATION_SOURCES.md).

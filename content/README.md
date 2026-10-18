@@ -9,7 +9,7 @@ Choose the JSON file for the section you want to change, edit its text or links,
 | [`about.json`](about.json) | `name`, `role`, `institution`, `shortInstitution`, `location`, and `bio`; hero labels, button text, and the divider below it |
 | [`research.json`](research.json) | Section heading and an `items` list of research cards, each with `symbol`, `title`, `description`, and `tags` |
 | [`projects.json`](projects.json) | Section heading and an `items` list of projects, each with `name`, `title`, `url`, `symbol`, `status`, `description`, and `tags` |
-| [`publications.json`](publications.json) | Section heading and an `items` list of papers; each has `year`, `title`, `authors`, `venue`, `url`, and an optional `authorNote` |
+| [`publications.json`](publications.json) | Section heading and an `items` list of papers; each has `year`, `title`, `authors`, `venue`, `url`, and optional `authorNote` and `preprint` fields |
 | [`notes.json`](notes.json) | Section heading and an `items` list of cards, each with `category`, `title`, `description`, and `status` |
 | [`contact.json`](contact.json) | Contact heading and description; profile `links`, each with an `id`, `label`, and `url` |
 | [`site.json`](site.json) | Browser title suffix, search description, brand initials, navigation links, CV URL, footer, and terminal introduction |
@@ -40,6 +40,17 @@ Copy an existing entry in the `items` list in `publications.json`, then change i
 ```
 
 You can omit `authorNote` entirely. Separate neighboring entries with a comma. The paper will appear on the homepage and in the terminal's `publications` command.
+
+When a preprint has been published, keep one entry using the journal citation and attach the earlier version with an optional `preprint` field:
+
+```json
+"preprint": {
+  "label": "arXiv:2407.01296 (2024)",
+  "url": "https://arxiv.org/abs/2407.01296"
+}
+```
+
+This adds an arXiv link under the same paper in both the homepage and terminal. The CV is maintained separately in `cv/cv.typ`; update its matching entry and run `npm run build:cv` too.
 
 ## Add a project or research interest
 

@@ -14,6 +14,7 @@ export function createTerminalProfile({about, research, projects, publications, 
       item.authors,
       item.venue,
       item.url,
+      ...(item.preprint ? [`Preprint: ${item.preprint.label}`, item.preprint.url] : []),
       ...(item.authorNote ? [item.authorNote] : []),
     ].join('\n')).join('\n\n'),
 

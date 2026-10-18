@@ -14,6 +14,7 @@ test('a content edit reaches the static homepage and terminal together', () => {
   content.publications.items.push({
     year: '2027', title: 'A new paper', authors: 'A. Author',
     venue: 'Example journal', url: 'https://example.com/paper',
+    preprint: {label: 'Earlier preprint', url: 'https://example.com/preprint'},
   });
   validateContent(content);
 
@@ -26,8 +27,11 @@ test('a content edit reaches the static homepage and terminal together', () => {
   assert.ok(terminal.projects.includes(content.projects.items[0].description));
   assert.ok(html.includes(content.notes.items[0].title));
   assert.ok(terminal.notes.includes(content.notes.items[0].title));
-  assert.ok(html.includes('<span class="paper-label">04</span>'));
+  const lastLabel = String(content.publications.items.length).padStart(2, '0');
+  assert.ok(html.includes(`<span class="paper-label">${lastLabel}</span>`));
   assert.ok(terminal.publications.includes('2027  A new paper'));
+  assert.ok(html.includes('href="https://example.com/preprint">Earlier preprint ↗</a>'));
+  assert.ok(terminal.publications.includes('Preprint: Earlier preprint\nhttps://example.com/preprint'));
   assert.ok(!html.includes('undefined'));
 });
 

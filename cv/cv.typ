@@ -22,9 +22,9 @@
   text(size: 8pt, fill: muted, date),
   [#strong(title)#if subtitle != none [\ #text(fill: muted, subtitle)]#if body != none [#v(1.5pt)#body]],
 )
-#let publication(year, title, authors, venue, url, note: none) = {
+#let publication(year, title, authors, venue, url, note: none, preprint: none) = {
   dated-entry(year, link(url)[#title #text(size: 7.5pt)[↗]], subtitle: authors, body: [
-    #emph(venue)#if note != none [\ #text(size: 8pt, fill: muted, note)]
+    #emph(venue)#if preprint != none [ · #link(preprint.url)[#preprint.label]]#if note != none [\ #text(size: 8pt, fill: muted, note)]
   ])
   v(4pt)
 }
@@ -76,11 +76,9 @@ Developing a symmetry-based mechanism for strong quantum Mpemba effects in symme
 
 = Publications and Preprints
 
-#publication([2026], [Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability], [*Ze-Yu Xing*, Yuncheng Xiong, and Haiping Hu], [Communications Physics 9, 127 (2026)], "https://doi.org/10.1038/s42005-026-02546-2", note: [Ze-Yu Xing and Yuncheng Xiong contributed equally.])
+#publication([2026], [Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability], [*Ze-Yu Xing*, Yuncheng Xiong, and Haiping Hu], [Communications Physics 9, 127 (2026)], "https://doi.org/10.1038/s42005-026-02546-2", preprint: (label: [arXiv:2407.01296 (2024)], url: "https://arxiv.org/abs/2407.01296"), note: [Ze-Yu Xing and Yuncheng Xiong contributed equally.])
 
 #publication([2025], [Universal spreading dynamics in quasiperiodic non-Hermitian systems], [*Ze-Yu Xing*, Shu Chen, and Haiping Hu], [Physical Review B 111, L180203 (2025)], "https://doi.org/10.1103/PhysRevB.111.L180203")
-
-#publication([2024], [Non-Hermitian skin effect in arbitrary dimensions: non-Bloch band theory and classification], [Yuncheng Xiong, *Ze-Yu Xing*, and Haiping Hu], [Preprint, arXiv:2407.01296 (2024)], "https://arxiv.org/abs/2407.01296")
 
 = Honors and Awards
 

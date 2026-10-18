@@ -13,7 +13,7 @@ export function renderPublications(publications, contact) {
           <div>
             <h3><a href="${text(item.url)}">${text(item.title)} ↗</a></h3>
             <p>${text(item.authors)}</p>
-            <a class="publication-meta" href="${text(item.url)}">${text(item.venue)}</a>
+            <a class="publication-meta" href="${text(item.url)}">${text(item.venue)}</a>${item.preprint ? ` · <a class="publication-meta" href="${text(item.preprint.url)}">${text(item.preprint.label)} ↗</a>` : ''}
             ${item.authorNote ? `<p class="author-note">${text(item.authorNote)}</p>` : ''}
           </div>
           <span class="paper-label">${numberLabel(index)}</span>
