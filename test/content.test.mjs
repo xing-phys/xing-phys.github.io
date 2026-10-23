@@ -35,13 +35,13 @@ test('a content edit reaches the static homepage and terminal together', () => {
   assert.ok(!html.includes('undefined'));
 });
 
-test('the Scholar link is shared by publications, contact, and terminal', () => {
+test('the Scholar link is shared by the hero, publications, contact, and terminal', () => {
   const content = structuredClone(original);
   const url = 'https://example.com/new-scholar-profile?one=1&two=2';
   content.contact.links.find(link => link.id === 'scholar').url = url;
 
   const html = renderPage(content);
-  assert.equal(html.split('href="https://example.com/new-scholar-profile?one=1&amp;two=2"').length - 1, 2);
+  assert.equal(html.split('href="https://example.com/new-scholar-profile?one=1&amp;two=2"').length - 1, 3);
   assert.ok(createTerminalProfile(content).contact.includes(url));
 });
 

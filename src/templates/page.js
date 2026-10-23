@@ -29,7 +29,7 @@ export function renderPage(content) {
   <div id="gui">
     ${renderHeader(site)}
     <main>
-      ${renderAbout(about, site)}
+      ${renderAbout(about, site, contact)}
       ${renderResearch(research)}
       ${renderProjects(projects)}
       ${renderPublications(publications, contact)}

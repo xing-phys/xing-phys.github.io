@@ -201,15 +201,3 @@
   font-size: 12px;
   margin-top: 8px;
 }
-
-.profile-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 26px;
-  color: var(--accent);
-}
-
-.profile-links a:hover {
-  text-decoration: underline;
-}

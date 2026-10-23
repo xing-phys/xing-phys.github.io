@@ -16,7 +16,7 @@ Choose the JSON file for the section you want to change, edit its text or links,
 
 The order of entries in an `items` or `links` list is their order on the page. Card and publication numbers are generated automatically. Keep publication years quoted, for example `"2026"`.
 
-The publication heading reuses a link from `contact.json`: `publications.json` has `profileLinkId: "scholar"`, which matches the `id` of the Google Scholar link. Update that URL once in `contact.json` to update both sections and the terminal.
+The profile links beneath your role and affiliation and in the contact section both read `contact.json`. The publication heading also reuses its Google Scholar link: `publications.json` has `profileLinkId: "scholar"`, which matches that link's `id`. Update a URL once in `contact.json` to update every place it appears, including the terminal.
 
 ## Change a biography
 

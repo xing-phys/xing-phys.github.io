@@ -195,6 +195,39 @@ h1>span:not(.hello) {
   line-height: 1.85;
 }
 
+.profile-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  color: var(--accent);
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  white-space: nowrap;
+}
+
+.profile-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.profile-icon {
+  flex: none;
+  fill: currentColor;
+}
+
+.hero-profiles {
+  justify-content: flex-start;
+  column-gap: 22px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
 .hero-actions {
   display: flex;
   gap: 30px;
@@ -943,16 +976,4 @@ body.in-terminal {
 .publication .author-note {
   font-size: 12px;
   margin-top: 8px;
-}
-
-.profile-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 26px;
-  color: var(--accent);
-}
-
-.profile-links a:hover {
-  text-decoration: underline;
 }

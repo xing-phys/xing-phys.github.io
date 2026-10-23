@@ -1,12 +1,14 @@
 import {escapeHtml as text} from '../html.js';
+import {renderProfileLinks} from '../profile-links.js';
 
-export function renderAbout(about, site) {
+export function renderAbout(about, site, contact) {
   return `
       <section class="hero wrap" id="about">
         <div class="hero-copy">
           <p class="eyebrow">${text(about.eyebrow)}</p>
           <h1>${text(about.greeting)}<br><span>${text(about.name)}.</span><span class="hello" aria-hidden="true">✳</span></h1>
           <p class="intro">${text(about.role)}<br>${text(about.shortInstitution)}</p>
+          ${renderProfileLinks(contact.links, 'hero-profiles')}
           <p class="bio">${text(about.bio)}</p>
           <div class="hero-actions">
             <a class="button" href="#research">${text(about.researchLinkLabel)} <span>↗</span></a>

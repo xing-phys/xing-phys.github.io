@@ -1,4 +1,5 @@
 import {escapeHtml as text, lines} from '../html.js';
+import {renderProfileLinks} from '../profile-links.js';
 
 export function renderContact(contact) {
   return `
@@ -6,8 +7,6 @@ export function renderContact(contact) {
         <p class="eyebrow">${text(contact.eyebrow)}</p>
         <h2>${lines(contact.title)}<span>.</span></h2>
         <p>${text(contact.description)}</p>
-        <div class="profile-links">
-          ${contact.links.map(link => `<a href="${text(link.url)}">${text(link.label)} ↗</a>`).join('\n          ')}
-        </div>
+        ${renderProfileLinks(contact.links)}
       </section>`;
 }
