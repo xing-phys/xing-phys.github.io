@@ -53,7 +53,7 @@
 
 == Research Profile
 
-PhD researcher working primarily on open quantum systems and non-equilibrium quantum dynamics. Research interests include quantum many-body dynamics, relaxation and transport, dissipation and decoherence, non-Hermitian physics, statistical mechanics, quantum information, quantum simulation, and connections with machine learning.
+My research explores novel phenomena in quantum systems far from equilibrium, particularly in open quantum systems and quantum many-body dynamics. I am interested in the principles governing collective behavior and relaxation, and in how information theory and probability can deepen our understanding of these phenomena. Looking ahead, I aim to explore how AI can advance theoretical discovery and how insights from physics can contribute to quantum computing and new approaches to learning and computation.
 
 == Education and Affiliation
 

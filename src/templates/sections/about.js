@@ -9,7 +9,7 @@ export function renderAbout(about, site, contact) {
           <h1>${text(about.greeting)}<br><span>${text(about.name)}.</span><span class="hello" aria-hidden="true">✳</span></h1>
           <p class="intro">${text(about.role)}<br>${text(about.shortInstitution)}</p>
           ${renderProfileLinks(contact.links, 'hero-profiles')}
-          <p class="bio">${text(about.bio)}</p>
+          ${about.bio.split(/\n\s*\n/).map(paragraph => `<p class="bio">${text(paragraph)}</p>`).join('\n          ')}
           <div class="hero-actions">
             <a class="button" href="#research">${text(about.researchLinkLabel)} <span>↗</span></a>
             <a class="text-link" href="${text(site.cvUrl)}" target="_blank" rel="noopener">${text(about.cvLinkLabel)} <span>↗</span></a>

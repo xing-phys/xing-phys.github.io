@@ -20,9 +20,9 @@
     },
     {
       "symbol": "Q↔A",
-      "title": "Interdisciplinary connections",
-      "description": "Exploring connections between quantum dynamics, quantum information, quantum simulation, and machine learning.",
-      "tags": ["QUANTUM INFORMATION", "MACHINE LEARNING"]
+      "title": "Information, computation & AI",
+      "description": "Exploring how information theory and probability can deepen our understanding of quantum dynamics, how AI can support theoretical discovery, and how physics can inform quantum computing and learning.",
+      "tags": ["INFORMATION & PROBABILITY", "AI & QUANTUM COMPUTING"]
     }
   ]
 }

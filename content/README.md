@@ -20,7 +20,7 @@ The profile links beneath your role and affiliation and in the contact section b
 
 ## Change a biography
 
-Edit `bio` in `about.json`. Keep it as plain text inside quotes. The `institution` field is the full institution name; `shortInstitution` is the compact version displayed below your name. Name, role, affiliation, and biography are also reused in the terminal.
+Edit `bio` in `about.json`. Keep it as plain text inside quotes; use `\n\n` between paragraphs. The homepage displays separate paragraphs, and the terminal preserves the same breaks. The `institution` field is the full institution name; `shortInstitution` is the compact version displayed below your name. Name, role, affiliation, and biography are also reused in the terminal.
 
 `site.json.description` is a separate search-engine description. Update it as well if a change to your role or affiliation should appear in search previews.
 
