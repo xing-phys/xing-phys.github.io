@@ -57,25 +57,31 @@
   )
 ]
 
-// Keep the printed address visible as well as the PDF's clickable link.
-#let profile-link(id, label, url) = (
-  profile-icon(id),
-  [#label:],
-  link(url, url.replace("https://", "")),
-)
+// Print compact profile information while retaining the full clickable target.
+#let profile-link(id, url) = {
+  let target = if id == "scholar" { url.replace("&hl=en", "") } else { url }
+  let display = if id == "orcid" {
+    target.replace("https://orcid.org/", "")
+  } else if id == "github" {
+    target.replace("https://github.com/", "")
+  } else {
+    target.replace("https://", "")
+  }
+  (profile-icon(id), link(target, display))
+}
 
 #block(breakable: false)[
   PhD Candidate in Physics \
   #about.institution
   #v(3pt)
   #grid(
-    columns: (12pt, auto, 1fr),
+    columns: (12pt, 1fr),
     column-gutter: 6pt, row-gutter: 2pt,
     align: left + horizon,
-    ..profile-link("website", "Website", "https://xing-phys.github.io/"),
+    ..profile-link("website", "https://xing-phys.github.io/"),
     ..("scholar", "orcid", "github").map(id => {
       let contact = contacts.find(contact => contact.id == id)
-      profile-link(id, contact.label, contact.url)
+      profile-link(id, contact.url)
     }).flatten(),
   )
 ]
