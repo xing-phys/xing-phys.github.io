@@ -9,6 +9,7 @@ The CV uses [basic-resume 0.2.9](https://typst.app/universe/package/basic-resume
 | Research profile, education, interests, projects, talks, and awards | `cv/cv.typ`, under the corresponding section heading |
 | Name, institution, and location | `content/about.json`, shared with the homepage |
 | Google Scholar, ORCID, and GitHub links | `content/contact.json`, shared with the homepage |
+| Header layout and printed website address | `cv/cv.typ`; monochrome profile icons are in `cv/profile-icons.typ` |
 | Publications, author notes, and associated arXiv links | `content/publications.json`, shared with the homepage |
 | Font family, body size, name size, paper size, and accent color | The `resume.with(...)` settings near the top of `cv/cv.typ` |
 

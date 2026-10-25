@@ -1,14 +1,15 @@
 // Selected template: basic-resume 0.2.9 by Stephen Xu.
 // https://typst.app/universe/package/basic-resume/
 #import "vendor/basic-resume-0.2.9/lib.typ": resume, edu
+#import "profile-icons.typ": profile-icon
 
 // Publications and profile links share the homepage's editable content files.
 #let about = json("../content/about.json")
 #let contacts = json("../content/contact.json").links
 #let publications = json("../content/publications.json").items
 
-// Typography and paper settings. The upstream layout supplies the section rules,
-// small-cap headings, entry helpers, and half-inch page margins.
+// Typography and paper settings. The upstream layout supplies the name heading,
+// entry helpers, and half-inch page margins.
 #show: resume.with(
   author: about.name,
   font: "New Computer Modern",
@@ -20,6 +21,14 @@
 
 #set document(title: "Curriculum Vitae - " + about.name, author: about.name)
 #set par(justify: false, leading: 0.4em, spacing: 0.4em)
+// Keep section rules clear of the text while leaving room for the profile header.
+#show heading.where(level: 2): it => block(
+  above: 9pt, below: 5pt, sticky: true,
+  stack(dir: ttb, spacing: 3pt,
+    text(size: 13.2pt, weight: "bold", fill: rgb("#242333"), smallcaps(it.body)),
+    line(length: 100%, stroke: 1pt),
+  ),
+)
 
 // Keep each citation together and emphasize the author's name in the author list.
 #let publication(paper) = block(breakable: false)[
@@ -48,8 +57,28 @@
   )
 ]
 
-#text(size: 11pt)[PhD Candidate in Physics · #about.institution] \
-#about.location · #link("https://xing-phys.github.io/")[Website]#for contact in contacts [ · #link(contact.url, contact.label)]
+// Keep the printed address visible as well as the PDF's clickable link.
+#let profile-link(id, label, url) = (
+  profile-icon(id),
+  [#label:],
+  link(url, url.replace("https://", "")),
+)
+
+#block(breakable: false)[
+  PhD Candidate in Physics \
+  #about.institution
+  #v(3pt)
+  #grid(
+    columns: (12pt, auto, 1fr),
+    column-gutter: 6pt, row-gutter: 2pt,
+    align: left + horizon,
+    ..profile-link("website", "Website", "https://xing-phys.github.io/"),
+    ..("scholar", "orcid", "github").map(id => {
+      let contact = contacts.find(contact => contact.id == id)
+      profile-link(id, contact.label, contact.url)
+    }).flatten(),
+  )
+]
 
 == Research Profile
 
