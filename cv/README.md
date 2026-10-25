@@ -14,7 +14,7 @@ The CV uses [basic-resume 0.2.9](https://typst.app/universe/package/basic-resume
 | Font family, body size, name size, and paper size | The `resume.with(...)` settings near the top of `cv/cv.typ` |
 | Colors, line spacing, and section spacing | The `palette`, `par`, and heading settings near the top of `cv/cv.typ` |
 
-Publications are generated from the same list as the homepage and terminal. Keep one entry per work and attach earlier versions with the optional `preprint` field. The CV emphasizes your name in each author list automatically.
+Publications are generated from the same list as the homepage and terminal. Keep one entry per work and attach earlier versions with the optional `preprint` field. CV citations are numbered in list order, with authors before titles and your name emphasized automatically.
 
 For compact journal citations, `equalContributors` lists the authors receiving superscript asterisks instead of an explanatory note, and `showPreprintInCv: false` hides the preprint link in the CV.
 

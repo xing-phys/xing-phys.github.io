@@ -42,27 +42,36 @@
   ),
 )
 
-// Keep each citation together and emphasize the author's name in the author list.
-#let publication(paper) = block(breakable: false)[
+// Preserve name emphasis and equal-contribution marks in each author list.
+#let authors(paper) = {
+  let equal-contributors = paper.at("equalContributors", default: ())
+  for (index, author) in paper.authors.split(", ").enumerate() {
+    if index > 0 { ", " }
+    let name = author.replace(regex("^and "), "")
+    if author.starts-with("and ") { "and " }
+    if name == about.name { strong(name) } else { name }
+    if equal-contributors.contains(name) { super("*") }
+  }
+}
+
+// Numbered, author-first citations with a hanging indent; keep each entry intact.
+#let publication(paper, number) = block(breakable: false)[
   #grid(
-    columns: (1fr, auto), column-gutter: 10pt,
-    strong(link(paper.url, paper.title)),
-    text(fill: palette.muted, paper.year),
+    columns: (auto, 1fr), column-gutter: 8pt,
+    text(fill: palette.name, "[" + str(number) + "]"),
+    [
+      #grid(
+        columns: (1fr, auto), column-gutter: 10pt,
+        authors(paper),
+        text(fill: palette.muted, paper.year),
+      )
+      #v(3pt)
+      #strong(link(paper.url, paper.title)) \
+      #text(fill: palette.muted, emph(paper.venue))
+      #if "preprint" in paper and paper.at("showPreprintInCv", default: true) [ · #link(paper.preprint.url, paper.preprint.label)]
+      #if "authorNote" in paper and paper.at("equalContributors", default: ()).len() == 0 [\ #text(size: 9.5pt, fill: palette.muted, paper.authorNote)]
+    ],
   )
-  #v(4pt)
-  #{
-    let equal-contributors = paper.at("equalContributors", default: ())
-    for (index, author) in paper.authors.split(", ").enumerate() {
-      if index > 0 { ", " }
-      let name = author.replace(regex("^and "), "")
-      if author.starts-with("and ") { "and " }
-      if name == about.name { strong(name) } else { name }
-      if equal-contributors.contains(name) { super("*") }
-    }
-  } \
-  #text(fill: palette.muted, emph(paper.venue))
-  #if "preprint" in paper and paper.at("showPreprintInCv", default: true) [ · #link(paper.preprint.url, paper.preprint.label)]
-  #if "authorNote" in paper and paper.at("equalContributors", default: ()).len() == 0 [\ #text(size: 9.5pt, fill: palette.muted, paper.authorNote)]
 ]
 
 #let award(title, institution, year) = block(breakable: false)[
@@ -114,7 +123,7 @@ My research explores novel phenomena in quantum systems far from equilibrium, pa
     location: text(fill: palette.muted, about.location),
     degree: "PhD Candidate in Physics",
     dates: text(fill: palette.muted)[Aug. 2022 - Present],
-    consistent: true,
+    consistent: false,
   )
 ]
 
@@ -124,14 +133,10 @@ My research explores novel phenomena in quantum systems far from equilibrium, pa
     location: text(fill: palette.muted)[Jilin, China],
     degree: "B.Sc. in Physics, Honors Program in Science",
     dates: text(fill: palette.muted)[Aug. 2018 - Jun. 2022],
-    consistent: true,
+    consistent: false,
   ) \
   GPA: 3.88/4.00 (93.2/100).
 ]
-
-== Research Interests
-
-Non-equilibrium quantum dynamics · Open quantum systems · Quantum many-body physics · Non-Hermitian physics · Statistical mechanics · Quantum information and simulation
 
 == Ongoing Research Projects
 
@@ -149,8 +154,8 @@ Spontaneous symmetry breaking enables the strong quantum Mpemba effect for discr
 
 == Publications and Preprints
 
-#for paper in publications {
-  publication(paper)
+#for (index, paper) in publications.enumerate() {
+  publication(paper, index + 1)
   v(8pt)
 }
 
