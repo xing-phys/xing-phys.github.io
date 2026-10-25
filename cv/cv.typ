@@ -144,9 +144,6 @@ Local, translationally invariant Lindbladians with strong U(1) symmetry and a un
 Spontaneous symmetry breaking enables the strong quantum Mpemba effect for discrete or continuous, strong or weak symmetries without delicate state engineering. States in the steady-state symmetry sector bypass slow modes and relax faster than closer states overlapping the slow manifold.
 ]
 
-// Separate the research overview from the record of outputs and recognition.
-#pagebreak(weak: true)
-
 == Publications and Preprints
 
 #for paper in publications {
