@@ -14,7 +14,9 @@
         "label": "arXiv:2407.01296 (2024)",
         "url": "https://arxiv.org/abs/2407.01296"
       },
-      "authorNote": "Ze-Yu Xing and Yuncheng Xiong contributed equally."
+      "authorNote": "Ze-Yu Xing and Yuncheng Xiong contributed equally.",
+      "equalContributors": ["Ze-Yu Xing", "Yuncheng Xiong"],
+      "showPreprintInCv": false
     },
     {
       "year": "2025",

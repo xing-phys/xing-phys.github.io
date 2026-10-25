@@ -51,15 +51,18 @@
   )
   #v(4pt)
   #{
-    let names = paper.authors.split(about.name)
-    for (index, part) in names.enumerate() {
-      if index > 0 { strong(about.name) }
-      part
+    let equal-contributors = paper.at("equalContributors", default: ())
+    for (index, author) in paper.authors.split(", ").enumerate() {
+      if index > 0 { ", " }
+      let name = author.replace(regex("^and "), "")
+      if author.starts-with("and ") { "and " }
+      if name == about.name { strong(name) } else { name }
+      if equal-contributors.contains(name) { super("*") }
     }
   } \
   #text(fill: palette.muted, emph(paper.venue))
-  #if "preprint" in paper [ · #link(paper.preprint.url, paper.preprint.label)]
-  #if "authorNote" in paper [\ #text(size: 9.5pt, fill: palette.muted, paper.authorNote)]
+  #if "preprint" in paper and paper.at("showPreprintInCv", default: true) [ · #link(paper.preprint.url, paper.preprint.label)]
+  #if "authorNote" in paper and paper.at("equalContributors", default: ()).len() == 0 [\ #text(size: 9.5pt, fill: palette.muted, paper.authorNote)]
 ]
 
 #let award(title, institution, year) = block(breakable: false)[

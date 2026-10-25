@@ -16,6 +16,8 @@ The CV uses [basic-resume 0.2.9](https://typst.app/universe/package/basic-resume
 
 Publications are generated from the same list as the homepage and terminal. Keep one entry per work and attach earlier versions with the optional `preprint` field. The CV emphasizes your name in each author list automatically.
 
+For compact journal citations, `equalContributors` lists the authors receiving superscript asterisks instead of an explanatory note, and `showPreprintInCv: false` hides the preprint link in the CV.
+
 The layout flows across pages rather than targeting a single page. Keep the comfortable line spacing and section gaps when adding content; each project and publication stays together. Navy, teal, blue, and slate distinguish names, headings, links, and supporting details while remaining readable in print.
 
 ## Building

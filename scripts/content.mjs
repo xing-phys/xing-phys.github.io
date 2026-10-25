@@ -30,6 +30,7 @@ const schemas = {
     items: [{
       year: 'string', title: 'string', authors: 'string', venue: 'string', url: 'string',
       'authorNote?': 'string', 'preprint?': {label: 'string', url: 'string'},
+      'equalContributors?': ['string'], 'showPreprintInCv?': 'boolean',
     }],
   },
   notes: {
