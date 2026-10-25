@@ -88,9 +88,9 @@ Non-equilibrium quantum dynamics · Open quantum systems · Quantum many-body ph
 
 Local, translationally invariant Lindbladians with strong U(1) symmetry and a unique steady state in a fixed-charge sector exhibit asymptotically gapless modes in the thermodynamic limit: long-wavelength modes at any filling, plus additional modes at wave vectors set by non-integer filling.
 
-#strong(link("https://github.com/xing-phys/ssb-qme")[ssb-qme: Symmetry-Enforced Strong Quantum Mpemba Effect])
+#strong(link("https://github.com/xing-phys/ssb-qme")[Strong Quantum Mpemba Effect via Spontaneous Symmetry Breaking in Open Systems])
 
-Developing a symmetry-based mechanism for strong quantum Mpemba effects in symmetry-broken open systems. Current work studies discrete parity and continuous U(1) symmetries through Liouvillian analysis and quantum-master-equation simulations.
+Spontaneous symmetry breaking enables the strong quantum Mpemba effect for discrete or continuous, strong or weak symmetries without delicate state engineering. States in the steady-state symmetry sector bypass slow modes and relax faster than closer states overlapping the slow manifold.
 
 == Publications and Preprints
 

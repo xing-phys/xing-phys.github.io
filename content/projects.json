@@ -17,12 +17,12 @@
     },
     {
       "name": "ssb-qme",
-      "title": "Symmetry-Enforced Strong Quantum Mpemba Effect",
+      "title": "Strong Quantum Mpemba Effect via Spontaneous Symmetry Breaking in Open Systems",
       "url": "https://github.com/xing-phys/ssb-qme",
       "symbol": "ℒ",
       "status": "ONGOING",
-      "description": "Developing a symmetry-based mechanism for strong quantum Mpemba effects in symmetry-broken open systems. Current work studies discrete parity and continuous U(1) symmetries through Liouvillian analysis and quantum-master-equation simulations.",
-      "tags": ["QUANTUM MPEMBA EFFECT", "SYMMETRY BREAKING", "LINDBLAD DYNAMICS"]
+      "description": "Spontaneous symmetry breaking provides a generic mechanism for the strong quantum Mpemba effect without delicate state engineering, for discrete or continuous, strong or weak symmetries. It creates slow modes in definite symmetry sectors: tunneling modes for discrete symmetries and Nambu-Goldstone modes for continuous ones. States in the steady-state symmetry sector bypass these modes and relax rapidly, while closer states overlapping the slow manifold relax slowly.",
+      "tags": ["QUANTUM MPEMBA EFFECT", "SPONTANEOUS SYMMETRY BREAKING", "SLOW RELAXATION"]
     }
   ]
 }
