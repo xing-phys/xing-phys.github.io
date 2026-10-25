@@ -12,8 +12,8 @@
       "url": "https://github.com/xing-phys/OYA-OQS",
       "symbol": "U(1)",
       "status": "ONGOING",
-      "description": "Investigating spectral constraints in translationally invariant open quantum many-body systems with strong U(1) symmetry. The project combines analytical Weyl-sequence arguments with momentum-resolved exact diagonalization and tensor-network simulations of dissipative spin chains.",
-      "tags": ["OPEN QUANTUM SYSTEMS", "TENSOR NETWORKS", "EXACT DIAGONALIZATION"]
+      "description": "Local, translationally invariant Lindbladians with strong U(1) symmetry and a unique steady state in a fixed-charge sector exhibit asymptotically gapless modes in the thermodynamic limit: long-wavelength modes at any filling, plus additional modes at wave vectors set by non-integer filling.",
+      "tags": ["LIOUVILLIAN LSM", "STRONG U(1) SYMMETRY", "GAPLESS MODES"]
     },
     {
       "name": "ssb-qme",

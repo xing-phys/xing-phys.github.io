@@ -86,7 +86,7 @@ Non-equilibrium quantum dynamics · Open quantum systems · Quantum many-body ph
 
 #strong(link("https://github.com/xing-phys/OYA-OQS")[OYA-OQS: Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems])
 
-Investigating spectral constraints in translationally invariant open quantum many-body systems with strong U(1) symmetry. The project combines analytical Weyl-sequence arguments with momentum-resolved exact diagonalization and tensor-network simulations of dissipative spin chains.
+Local, translationally invariant Lindbladians with strong U(1) symmetry and a unique steady state in a fixed-charge sector exhibit asymptotically gapless modes in the thermodynamic limit: long-wavelength modes at any filling, plus additional modes at wave vectors set by non-integer filling.
 
 #strong(link("https://github.com/xing-phys/ssb-qme")[ssb-qme: Symmetry-Enforced Strong Quantum Mpemba Effect])
 
