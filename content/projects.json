@@ -21,7 +21,7 @@
       "url": "https://github.com/xing-phys/ssb-qme",
       "symbol": "ℒ",
       "status": "ONGOING",
-      "description": "Spontaneous symmetry breaking provides a generic mechanism for the strong quantum Mpemba effect without delicate state engineering, for discrete or continuous, strong or weak symmetries. It creates slow modes in definite symmetry sectors: tunneling modes for discrete symmetries and Nambu-Goldstone modes for continuous ones. States in the steady-state symmetry sector bypass these modes and relax rapidly, while closer states overlapping the slow manifold relax slowly.",
+      "description": "Spontaneous symmetry breaking provides a generic mechanism for the strong quantum Mpemba effect, applying to discrete or continuous, strong or weak symmetries without delicate state engineering. States in the steady-state symmetry sector bypass the slow modes and relax rapidly, while closer states overlapping the slow manifold relax slowly.",
       "tags": ["QUANTUM MPEMBA EFFECT", "SPONTANEOUS SYMMETRY BREAKING", "SLOW RELAXATION"]
     }
   ]
