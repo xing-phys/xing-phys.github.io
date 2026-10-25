@@ -9,8 +9,8 @@
     image(bytes(scholar-svg.replace("currentColor", color.to-hex()))))
 }
 
-// Monochrome vectors stay sharp and legible in printed copies.
-#let profile-icon(id) = {
+// Vector icons stay sharp in both printed and digital copies.
+#let profile-icon(id, color: black) = {
   let icons = (
     website: website-icon,
     scholar: scholar-icon,
@@ -18,5 +18,5 @@
     github: github-icon,
   )
   let icon = icons.at(id)
-  icon(color: black)
+  icon(color: color)
 }

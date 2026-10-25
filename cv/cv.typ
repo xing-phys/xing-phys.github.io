@@ -8,25 +8,37 @@
 #let contacts = json("../content/contact.json").links
 #let publications = json("../content/publications.json").items
 
+#let palette = (
+  body: rgb("#28333F"),
+  name: rgb("#173E5C"),
+  section: rgb("#176B73"),
+  link: rgb("#245F91"),
+  muted: rgb("#596777"),
+)
+
 // Typography and paper settings. The upstream layout supplies the name heading,
 // entry helpers, and half-inch page margins.
+#set page(footer: context align(right,
+  text(size: 9pt, fill: palette.muted, counter(page).display("1 / 1", both: true))))
 #show: resume.with(
   author: about.name,
   font: "New Computer Modern",
   font-size: 11pt,
   author-font-size: 24pt,
   paper: "a4",
-  accent-color: "#242333",
+  accent-color: palette.name.to-hex(),
 )
 
 #set document(title: "Curriculum Vitae - " + about.name, author: about.name)
-#set par(justify: false, leading: 0.4em, spacing: 0.4em)
-// Keep section rules clear of the text while leaving room for the profile header.
+#set text(fill: palette.body)
+#set par(justify: false, leading: 0.65em, spacing: 0.75em)
+#show link: set text(fill: palette.link)
+// Let the content flow across pages with comfortable space around each section.
 #show heading.where(level: 2): it => block(
-  above: 9pt, below: 5pt, sticky: true,
-  stack(dir: ttb, spacing: 3pt,
-    text(size: 13.2pt, weight: "bold", fill: rgb("#242333"), smallcaps(it.body)),
-    line(length: 100%, stroke: 1pt),
+  above: 18pt, below: 8pt, sticky: true,
+  stack(dir: ttb, spacing: 5pt,
+    text(size: 13.2pt, weight: "bold", fill: palette.section, smallcaps(it.body)),
+    line(length: 100%, stroke: (paint: palette.section, thickness: 0.6pt)),
   ),
 )
 
@@ -35,9 +47,9 @@
   #grid(
     columns: (1fr, auto), column-gutter: 10pt,
     strong(link(paper.url, paper.title)),
-    paper.year,
+    text(fill: palette.muted, paper.year),
   )
-  #v(2pt)
+  #v(4pt)
   #{
     let names = paper.authors.split(about.name)
     for (index, part) in names.enumerate() {
@@ -45,15 +57,16 @@
       part
     }
   } \
-  #emph(paper.venue)
+  #text(fill: palette.muted, emph(paper.venue))
   #if "preprint" in paper [ · #link(paper.preprint.url, paper.preprint.label)]
-  #if "authorNote" in paper [\ #text(size: 9pt, paper.authorNote)]
+  #if "authorNote" in paper [\ #text(size: 9.5pt, fill: palette.muted, paper.authorNote)]
 ]
 
 #let award(title, institution, year) = block(breakable: false)[
   #grid(
     columns: (1fr, auto), column-gutter: 10pt,
-    [#strong(title), #institution], year,
+    [#text(fill: palette.name, strong(title)), #text(fill: palette.muted, institution)],
+    text(fill: palette.muted, year),
   )
 ]
 
@@ -67,16 +80,16 @@
   } else {
     target.replace("https://", "")
   }
-  (profile-icon(id), link(target, display))
+  (profile-icon(id, color: palette.link), link(target, display))
 }
 
 #block(breakable: false)[
-  PhD Candidate in Physics \
-  #about.institution
-  #v(3pt)
+  #text(fill: palette.name, weight: "semibold")[PhD Candidate in Physics] \
+  #text(fill: palette.muted, about.institution)
+  #v(6pt)
   #grid(
     columns: (12pt, 1fr),
-    column-gutter: 6pt, row-gutter: 2pt,
+    column-gutter: 6pt, row-gutter: 4pt,
     align: left + horizon,
     ..profile-link("website", "https://xing-phys.github.io/"),
     ..("scholar", "orcid", "github").map(id => {
@@ -95,9 +108,9 @@ My research explores novel phenomena in quantum systems far from equilibrium, pa
 #block(breakable: false)[
   #edu(
     institution: about.institution,
-    location: about.location,
+    location: text(fill: palette.muted, about.location),
     degree: "PhD Candidate in Physics",
-    dates: "Aug. 2022 - Present",
+    dates: text(fill: palette.muted)[Aug. 2022 - Present],
     consistent: true,
   )
 ]
@@ -105,9 +118,9 @@ My research explores novel phenomena in quantum systems far from equilibrium, pa
 #block(breakable: false)[
   #edu(
     institution: "Jilin University",
-    location: "Jilin, China",
+    location: text(fill: palette.muted)[Jilin, China],
     degree: "B.Sc. in Physics, Honors Program in Science",
-    dates: "Aug. 2018 - Jun. 2022",
+    dates: text(fill: palette.muted)[Aug. 2018 - Jun. 2022],
     consistent: true,
   ) \
   GPA: 3.88/4.00 (93.2/100).
@@ -119,19 +132,26 @@ Non-equilibrium quantum dynamics · Open quantum systems · Quantum many-body ph
 
 == Ongoing Research Projects
 
+#block(breakable: false)[
 #strong(link("https://github.com/xing-phys/OYA-OQS")[OYA-OQS: Liouvillian Lieb-Schultz-Mattis Constraints in Open Quantum Systems])
 
 Local, translationally invariant Lindbladians with strong U(1) symmetry and a unique steady state in a fixed-charge sector exhibit asymptotically gapless modes in the thermodynamic limit: long-wavelength modes at any filling, plus additional modes at wave vectors set by non-integer filling.
+]
 
+#block(breakable: false)[
 #strong(link("https://github.com/xing-phys/ssb-qme")[Strong Quantum Mpemba Effect via Spontaneous Symmetry Breaking in Open Systems])
 
 Spontaneous symmetry breaking enables the strong quantum Mpemba effect for discrete or continuous, strong or weak symmetries without delicate state engineering. States in the steady-state symmetry sector bypass slow modes and relax faster than closer states overlapping the slow manifold.
+]
+
+// Separate the research overview from the record of outputs and recognition.
+#pagebreak(weak: true)
 
 == Publications and Preprints
 
 #for paper in publications {
   publication(paper)
-  v(5pt)
+  v(8pt)
 }
 
 == Talks and Presentations
@@ -139,8 +159,8 @@ Spontaneous symmetry breaking enables the strong quantum Mpemba effect for discr
 #block(breakable: false)[
   #grid(
     columns: (1fr, auto), column-gutter: 10pt,
-    strong[Symmetry-Enforced Strong Quantum Mpemba Effect],
-    [2025],
+    text(fill: palette.name, strong[Symmetry-Enforced Strong Quantum Mpemba Effect]),
+    text(fill: palette.muted)[2025],
   )
   19th Symposium for Young Scholars on Cold Atom Physics, Changsha, China.
 ]
