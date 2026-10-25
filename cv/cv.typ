@@ -19,7 +19,7 @@
 )
 
 #set document(title: "Curriculum Vitae - " + about.name, author: about.name)
-#set par(justify: false, leading: 0.45em, spacing: 0.45em)
+#set par(justify: false, leading: 0.4em, spacing: 0.4em)
 
 // Keep each citation together and emphasize the author's name in the author list.
 #let publication(paper) = block(breakable: false)[
@@ -99,8 +99,24 @@ Developing a symmetry-based mechanism for strong quantum Mpemba effects in symme
   v(5pt)
 }
 
+== Talks and Presentations
+
+#block(breakable: false)[
+  #grid(
+    columns: (1fr, auto), column-gutter: 10pt,
+    strong[Symmetry-Enforced Strong Quantum Mpemba Effect],
+    [2025],
+  )
+  19th Symposium for Young Scholars on Cold Atom Physics, Changsha, China.
+]
+
 == Honors and Awards
 
+#award(
+  [Director's Scholarship],
+  [Institute of Physics, Chinese Academy of Sciences],
+  [2025],
+)
 #award(
   [Ny Tsi-Ze Scholarship],
   [Institute of Physics, Chinese Academy of Sciences],
