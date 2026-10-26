@@ -43,7 +43,7 @@ You can omit `authorNote` entirely. Separate neighboring entries with a comma. T
 
 For equal contributions, add `"equalContributors": ["Ze-Yu Xing", "Yuncheng Xiong"]` with the exact author names. The homepage, terminal, and CV add asterisks after these names, so an explanatory `authorNote` is unnecessary.
 
-When a preprint has been published, keep one entry using the journal citation and attach the earlier version with an optional `preprint` field:
+When a preprint has been published, keep one entry using the journal citation. Only add the optional `preprint` field if you want to display an additional link to the earlier version; omit it for a journal-only citation:
 
 ```json
 "preprint": {
