@@ -41,6 +41,8 @@ Copy an existing entry in the `items` list in `publications.json`, then change i
 
 You can omit `authorNote` entirely. Separate neighboring entries with a comma. The paper will appear on the homepage and in the terminal's `publications` command.
 
+For equal contributions, add `"equalContributors": ["Ze-Yu Xing", "Yuncheng Xiong"]` with the exact author names. The homepage, terminal, and CV add asterisks after these names, so an explanatory `authorNote` is unnecessary.
+
 When a preprint has been published, keep one entry using the journal citation and attach the earlier version with an optional `preprint` field:
 
 ```json

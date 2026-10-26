@@ -1,4 +1,5 @@
 import {escapeHtml as text, numberLabel, sectionHeading} from '../html.js';
+import {publicationAuthors} from '../../scripts/publication-authors.js';
 
 export function renderPublications(publications, contact) {
   const profile = contact.links.find(link => link.id === publications.profileLinkId);
@@ -12,7 +13,7 @@ export function renderPublications(publications, contact) {
           <span class="year">${text(item.year)}</span>
           <div>
             <h3><a href="${text(item.url)}">${text(item.title)} ↗</a></h3>
-            <p>${text(item.authors)}</p>
+            <p>${publicationAuthors(item).map(author => `${text(author.prefix)}${text(author.name)}${author.equal ? '<sup>*</sup>' : ''}`).join(', ')}</p>
             <a class="publication-meta" href="${text(item.url)}">${text(item.venue)}</a>${item.preprint ? ` · <a class="publication-meta" href="${text(item.preprint.url)}">${text(item.preprint.label)} ↗</a>` : ''}
             ${item.authorNote ? `<p class="author-note">${text(item.authorNote)}</p>` : ''}
           </div>

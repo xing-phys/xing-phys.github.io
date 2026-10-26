@@ -124,7 +124,8 @@ My research explores novel phenomena in quantum systems far from equilibrium, pa
     degree: "PhD Candidate in Physics",
     dates: text(fill: palette.muted)[Aug. 2022 - Present],
     consistent: false,
-  )
+  ) \
+  Advisor: Haiping Hu.
 ]
 
 #block(breakable: false)[

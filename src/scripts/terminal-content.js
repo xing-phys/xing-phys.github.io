@@ -1,4 +1,6 @@
 // Both views use content/*.json. No biography, paper, or project is copied here.
+import {publicationAuthors} from './publication-authors.js';
+
 export function createTerminalProfile({about, research, projects, publications, notes, contact}) {
   return {
     about: [about.name, about.role, about.institution, about.location, '', about.bio].join('\n'),
@@ -11,7 +13,7 @@ export function createTerminalProfile({about, research, projects, publications, 
 
     publications: publications.items.map(item => [
       `${item.year}  ${item.title}`,
-      item.authors,
+      publicationAuthors(item).map(author => `${author.prefix}${author.name}${author.equal ? '*' : ''}`).join(', '),
       item.venue,
       item.url,
       ...(item.preprint ? [`Preprint: ${item.preprint.label}`, item.preprint.url] : []),
